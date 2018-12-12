@@ -1,0 +1,9 @@
+{
+  "name": "orderservicenodeapp",
+  "version": "1.0.0",
+  "description": "Simple REST API to do CRUD on orders",
+  "main": "app.js",
+  "scripts": {},
+  "author": "Aravindan Balasubramanian",
+  "license": "ISC"
+}
