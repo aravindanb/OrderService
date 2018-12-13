@@ -1,23 +1,37 @@
 //configure routes for order API's here
 
 const ordersEndpoint = '/orders';
+const orderCollection = 'orders'
+var ObjectID = require('mongodb').ObjectID;
+
 module.exports = function(app, db) {
 
 /**
  * Endpoints for the Order Service
  */
 
-// GET /orders
+// GET (all) /orders
 app.get(ordersEndpoint, (req,res)=>{
     res.json(["Tony", "Lisa", "Michael", "Ginger", "Food"]);
 });
 
-// GET /orders
+// GET /orders/:id
 app.get(ordersEndpoint+'/:id', (req,res)=>{
-    res.json(["Tony", "Lisa", "Michael", "Ginger", "Food"]);
+    const orderID = req.params.id;
+    const orderIDObject = {
+        '_id': new ObjectID(orderID)
+    };
+    db.collection(orderCollection).findOne(orderIDObject,(err,order)=>{
+        if(err){
+            console.log(err);
+            res.send({'error': 'An unknown error occurred'});
+        } else {
+            console.log(order);
+            res.send(order);
+        }
+    })
 });
 
-const collection = 
 // POST /orders
 app.post(ordersEndpoint,(req,res)=>{
     //construct an object with the posted data
@@ -40,6 +54,12 @@ app.post(ordersEndpoint,(req,res)=>{
         }
 
     })
-})
+});
+
+
+//PUT /orders/:id
+
+
+//DELETE /orders/:id
 
 }; 
