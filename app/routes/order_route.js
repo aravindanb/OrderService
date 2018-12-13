@@ -8,14 +8,38 @@ module.exports = function(app, db) {
  */
 
 // GET /orders
-app.get(ordersEndpoint, (req,res,next)=>{
+app.get(ordersEndpoint, (req,res)=>{
     res.json(["Tony", "Lisa", "Michael", "Ginger", "Food"]);
 });
 
+// GET /orders
+app.get(ordersEndpoint+'/:id', (req,res)=>{
+    res.json(["Tony", "Lisa", "Michael", "Ginger", "Food"]);
+});
+
+const collection = 
 // POST /orders
 app.post(ordersEndpoint,(req,res)=>{
-    console.log(req.body);
-    res.send('Order Created' + req.body);
+    //construct an object with the posted data
+    const order = {
+        productid: req.body.productid,
+        product: req.body.product,
+        productPrice: req.body.productPrice,
+        productQty: req.body.productQty
+    }
+    console.log(order); // todo: remove this later
+    //insert object into order collection
+    db.collection('orders').insert(order, (err,result)=>{
+
+        if (err){
+            // throw an error
+            res.send({'error': 'An unknown error occurred'});
+        } else {
+            // send back the response
+            res.send(result.ops[0]);
+        }
+
+    })
 })
 
-};
+}; 
