@@ -12,7 +12,7 @@ module.exports = function(app, db) {
 
 // GET (all) /orders
 app.get(ordersEndpoint, (req,res)=>{
-    res.json(["Tony", "Lisa", "Michael", "Ginger", "Food"]);
+    // todo
 });
 
 // GET /orders/:id
@@ -58,8 +58,9 @@ app.post(ordersEndpoint,(req,res)=>{
 
 
 //PUT /orders/:id
-
+//todo
 
 //DELETE /orders/:id
+//todo
 
 }; 
