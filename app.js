@@ -8,11 +8,15 @@ const port = 3000;
 //user bodyParser to process URL encoded forms
 app.use(bodyParser.urlencoded({ extended: true}));
 
+//
 MongoClient.connect(db.url, (err, database)=>{
     if(err){
         return console.log(err);
     }
-    //import the routes in the app.js
+   
+    // Move all the CRUD operations into this callback since we need the dabase object to be present
+
+    //import the routes in the app.js - orderRoutes, productRoutes
     require('./app/routes')(app,database);
     /**
     * Server Listening at 3000
