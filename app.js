@@ -13,7 +13,7 @@ MongoClient.connect(db.url, (err, database)=>{
         return console.log(err);
     }
     //import the routes in the app.js
-    require('./app/routes')(app,{});
+    require('./app/routes')(app,database);
     /**
     * Server Listening at 3000
     */
