@@ -1,3 +1,7 @@
+# sensitive data
+
+config/db.js
+
 # Logs
 logs
 *.log
