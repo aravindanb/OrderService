@@ -13,4 +13,9 @@ app.get(ordersEndpoint, (req,res,next)=>{
     res.json(["Tony", "Lisa", "Michael", "Ginger", "Food"]);
 });
 
+// POST /orders
+app.post(ordersEndpoint,(req,res)=>{
+    res.send('Order Created');
+})
+
 };
