@@ -43,7 +43,7 @@ app.post(ordersEndpoint,(req,res)=>{
     }
     console.log(order); // todo: remove this later
     //insert object into order collection
-    db.collection('orders').insert(order, (err,result)=>{
+    db.collection(orderCollection).insert(order, (err,result)=>{
 
         if (err){
             // throw an error
