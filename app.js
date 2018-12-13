@@ -7,14 +7,6 @@ const port = 3000;
 //import the routes in the app.js
 require('./app/routes')(app,{});
 
-/**
- * Endpoints for the Order Service
- */
-
-// GET /orders
-app.get("/orders", (req,res,next)=>{
-    res.json(["Tony", "Lisa", "Michael", "Ginger", "Food"]);
-});
 
 /**
  * Server Listening at 3000
