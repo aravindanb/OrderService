@@ -1,6 +1,5 @@
 //configure routes for order API's here
 
-
 const ordersEndpoint = '/orders';
 module.exports = function(app, db) {
 
@@ -15,7 +14,8 @@ app.get(ordersEndpoint, (req,res,next)=>{
 
 // POST /orders
 app.post(ordersEndpoint,(req,res)=>{
-    res.send('Order Created');
+    console.log(req.body);
+    res.send('Order Created' + req.body);
 })
 
 };

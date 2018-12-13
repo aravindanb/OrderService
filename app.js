@@ -4,6 +4,9 @@ var bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
 
+//user bodyParser to process URL encoded forms
+app.use(bodyParser.urlencoded({ extended: true}));
+
 //import the routes in the app.js
 require('./app/routes')(app,{});
 
