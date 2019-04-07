@@ -12,7 +12,17 @@ module.exports = function(app, db) {
 
 // GET (all) /orders
 app.get(ordersEndpoint, (req,res)=>{
-    // todo
+
+var ordercollection =  db.collection(orderCollection);
+ordercollection.find({}).toArray(function (err, result) {
+    if(err) {
+        console.log(err);
+        res.send({'error': 'An unknown error occurred'});
+    } else {
+        res.send(JSON.stringify(result));
+    }
+})
+
 });
 
 // GET /orders/:id
