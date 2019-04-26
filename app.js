@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const db = require('./config/db');
 const app = express();
 const chalk = require('chalk');
+const debug = require('debug');
 const port = 3000;
 
 //user bodyParser to process URL encoded forms
