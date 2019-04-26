@@ -3,6 +3,7 @@ const MongoClient = require('mongodb').MongoClient;
 const bodyParser = require('body-parser');
 const db = require('./config/db');
 const app = express();
+const chalk = require('chalk');
 const port = 3000;
 
 //user bodyParser to process URL encoded forms
@@ -22,7 +23,7 @@ MongoClient.connect(db.url, (err, database)=>{
     * Server Listening at 3000
     */
     app.listen(port, ()=>{
-        console.log("Order Service Running on port 3000")
+        console.log(`Order Service Running on port ${chalk.green(port)}`);
     });
 })
 
