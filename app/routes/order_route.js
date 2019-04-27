@@ -36,7 +36,7 @@ app.get(ordersEndpoint+'/:id', (req,res)=>{
 app.post(ordersEndpoint,(req,res)=>{
     //construct an object with the posted data
     const order = {
-        productid: req.body.productid,
+        productid: req.body.productId,
         product: req.body.product,
         productPrice: req.body.productPrice,
         productQty: req.body.productQty
