@@ -5,6 +5,8 @@
 - `npm install`
 - Dev server in watch mode `npm run dev`  or
 - `node app.js`
+- do `DEBUG=* node app.js` to run in debug mode.
+- do `DEBUG=app node app.js` to run in minimalist debug mode
 
 ### Database account
 
