@@ -10,6 +10,7 @@ const port = 3000;
 
 //user bodyParser to process URL encoded forms
 app.use(bodyParser.urlencoded({ extended: true}));
+app.use(morgan('tiny'));
 
 //
 MongoClient.connect(db.url, (err, database)=>{
