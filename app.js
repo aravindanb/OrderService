@@ -3,10 +3,14 @@ const MongoClient = require('mongodb').MongoClient;
 const bodyParser = require('body-parser');
 const db = require('./config/db');
 const app = express();
+const chalk = require('chalk');
+const debug = require('debug')('app');
+const morgan = require('morgan');
 const port = 3000;
 
 //user bodyParser to process URL encoded forms
 app.use(bodyParser.urlencoded({ extended: true}));
+app.use(morgan('tiny'));
 
 //
 MongoClient.connect(db.url, (err, database)=>{
@@ -22,7 +26,7 @@ MongoClient.connect(db.url, (err, database)=>{
     * Server Listening at 3000
     */
     app.listen(port, ()=>{
-        console.log("Order Service Running on port 3000")
+        console.log(`Order Service Running on port ${chalk.green(port)}`);
     });
 })
 
