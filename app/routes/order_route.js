@@ -17,9 +17,14 @@ var ordercollection =  db.collection(orderCollection);
 ordercollection.find({}).toArray(function (err, result) {
     if(err) {
         console.log(err);
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
         res.send({'error': 'An unknown error occurred'});
     } else {
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
         res.send(JSON.stringify(result));
+
     }
 })
 
@@ -34,9 +39,13 @@ app.get(ordersEndpoint+'/:id', (req,res)=>{
     db.collection(orderCollection).findOne(orderIDObject,(err,order)=>{
         if(err){
             console.log(err);
+            res.header("Access-Control-Allow-Origin", "*");
+            res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
             res.send({'error': 'An unknown error occurred'});
         } else {
             console.log(order);
+            res.header("Access-Control-Allow-Origin", "*");
+            res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
             res.send(order);
         }
     })
@@ -57,9 +66,13 @@ app.post(ordersEndpoint,(req,res)=>{
 
         if (err){
             // throw an error
+            res.header("Access-Control-Allow-Origin", "*");
+            res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
             res.send({'error': 'An unknown error occurred'});
         } else {
             // send back the response
+            res.header("Access-Control-Allow-Origin", "*");
+            res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
             res.send(result.ops[0]);
         }
 
