@@ -153,7 +153,7 @@ Project Link: [https://github.com/aravindanb/OrderService](https://github.com/ar
 [contributors-shield]: https://img.shields.io/github/contributors/aravindanb/OrderService.svg?style=flat-square
 [contributors-url]: https://github.com/aravindanb/OrderService/graphs/contributors
 [issues-shield]: https://img.shields.io/github/issues/aravindanb/OrderService.svg?style=flat-square
-[issues-url]: https://github.com/aravindanb/OrderService/Best-README-Template/issues
+[issues-url]: https://github.com/aravindanb/OrderService/issues
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/aravindan24/
 [product-screenshot]: images/API.png
